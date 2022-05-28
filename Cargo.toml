@@ -1,0 +1,18 @@
+[workspace]
+members = [".", "entity", "migration"]
+
+[package]
+name = "sea_orm_testing"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+entity = { path = "entity" }
+migration = { path = "migration" }
+tokio = { version = "1.15.0", features = ["macros", "rt-multi-thread"] }
+
+[dependencies.sea-orm]
+version = "^0.8.0"
+features = [ "sqlx-postgres", "runtime-tokio-rustls", "macros" ] 
